@@ -1,0 +1,221 @@
+java
+
+To declear array and initialize the array
+
+>>>> int[] arr=new int[size];             <--------------------------------------------------------------int arr[100];
+
+this is automatically is initilize with 0
+
+if i want to declear with any element then
+>>>> Arrays.fill(arr,0);          <----------------------------------------------------------------------memset(arr,0,sizeof(arr));
+
+******************************************************************
+
+char to Ascci value 
+
+char c=name.charAt(i);       /////// name is a string name and i is the index;  <------------------------ charcter in indx
+
+
+int x=(int)c;                           <-------------------------------------------------------------------------------------char to integer  
+                                                                                    
+cout<<x;
+
+
+OOOOOORRRRRRRR
+
+int a=(int)name.charAt(i);
+
+
+********************************************************************
+for INT_MAX  same as a c++
+
+
+public static void main(String[] arg) 
+    { 
+  
+        // Print the value of Integer.MAX_VALUE 
+        System.out.println("Integer.MAX_VALUE = "
+                           + Integer.MAX_VALUE);     <-------------------------------------------------------INT_MAX
+    }
+
+***********************************************************************
+it having shorting technique and iterator
+
+
+ public static void main(String args[])
+    {
+        int[] arr = { 5, -2, 23, 7, 87, -42, 509 };
+        System.out.println("The original array is: ");
+        for (int num : arr) {     <---------------------------------------------------------------------------iterator
+            System.out.print(num + " ");
+        }
+        Arrays.sort(arr);              <--------------------------------------------------------------------------sorting
+        System.out.println("\nThe sorted array is: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+**************************************************
+
+ length of array 
+int[] str=new int[10];
+
+    str.length                                   <-----------------------------------------------------------------arr.size();
+
+
+
+**************************************************************************
+
+abs in java
+
+int x=Math.abs(-7);                                  <------------------------------------------------------------------abs(-7)
+
+
+
+*******************************************************************************
+ leetcode 77   combination 
+
+
+class Solution {
+    // vector<vector<int>>ans;
+   // List<List<Integer>> ans =new ArrayList<Integer>();    <---------------------------------------------------------- 2D list
+    List<List<Integer>> ans = new ArrayList<>();    <--------------------------------------------------------------------globle 2D list like vector
+   public void fun(int i,int k,List<Integer> v,int n)
+    {
+        if(i==n || v.size()==k)
+        {
+            if(v.size()==k)
+            {
+                ans.add(new ArrayList<>(v));     <-------------------------------------------------------------------------------Add 1D list in 2D
+            }
+            return;
+        }
+        //v.push_back(i+1);
+        v.add(i+1);  <-------------------------------------------------------------------------------------------------------------------Add element in 1D list
+        fun(i+1,k,v,n);
+        //v.pop_back();
+        v.remove(v.size()-1);<------------------------------------------------------------------------------------------------------pop back in list
+        fun(i+1,k,v,n);   
+    }
+    
+    public List<List<Integer>> combine(int n, int k) 
+    {
+        
+        //vector<int>v;
+        List<Integer>v=new ArrayList<Integer>();
+        fun(0,k,v,n);
+        return ans;
+    }
+}
+
+
+
+********************************************************************************************************
+u have to use with list or map
+
+ for(int i=0;i<s.length();i++)
+        {
+            arr[s.charAt(i)-'a']++;  <-------------------------------------------------------------------------------------------------------arr[ s[ i ] - 'a' ]++;
+        }
+
+
+
+**************************************************************************************************
+
+ String ans=new String("1");  <-------------------------------------------------------------string ans=" ";
+
+
+ans.length()     <---------------------------------------------------------------------------------ans.size();
+
+
+ans.charAt(i) <-------------------------------------------------------------------------------------ans[ i ];    string charctet by index;
+
+
+
+String c=Integer.toString(count);    <------------------------------------------------------ string c=to_string(count)  // integer to string 
+
+
+
+*******************************************************************************************************
+
+priority queue in java 
+by default it is min heap and c++ by default it is max heap
+
+
+   static int longestPerfectPiece(int[] arr, int n) 
+    {
+          PriorityQueue<Integer> max=new PriorityQueue<>(Collections.reverseOrder());   <---------------------max heap
+          PriorityQueue<Integer> min=new PriorityQueue<>();                             <---------------------min heap
+         
+          int ans=0;
+          for(int i=0,j=0;i<n;i++)
+          {
+              max.add(arr[i]);
+              min.add(arr[i]);
+              while(j<n && max.peek() - min.peek() >1)                              <------max.top() and min.top();
+              {
+                  max.remove(arr[j]);                                              <--------remove that element 
+                  min.remove(arr[j]);                                               <-------remove that element
+                  j++;
+              }
+              ans=Math.max(ans,i-j+1);
+          }
+          return ans;
+          
+    }
+
+
+
+*************************************************************************************************
+
+________________Map______________________________    
+
+
+import java.util.*;
+class A
+{
+    public static void main(String args[])
+    {
+        System.out.println("welcome");
+        Map<Integer,Integer>mp = new HashMap<>();
+        int j=10;
+        for(int i=0;i<10;i++)
+        {
+            mp.put(i,j++);                       <--------------------------------------taking element;
+        }
+        for(Map.Entry<Integer,Integer> it:mp.entrySet())
+        {
+            System.out.println(it.getKey()+"  "+ it.getValue());  <------------------------taking out element;
+        }
+        
+    }
+}
+
+
+********************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
